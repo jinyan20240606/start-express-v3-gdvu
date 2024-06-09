@@ -14,15 +14,7 @@ app.all("/*", (req, res) => {
   console.log("FC Invoke Start RequestId: " + requestId);
 
   res.send(
-    JSON.stringify({
-      msg: "Hello, World! ",
-      reqeust: {
-        query: req.query,
-        path: req.originalUrl,
-        data: req.body,
-        clientIp: req.headers["x-forwarded-for"],
-      },
-    })
+    JSON.stringify(req.body)
   );
 
   console.log("FC Invoke End RequestId: " + requestId);
