@@ -9,6 +9,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.raw());
 
 app.all("/*", (req, res) => {
+  console.log(req, '12--------')
   const requestId = req.headers["x-fc-request-id"];
   console.log("FC Invoke Start RequestId: " + requestId);
 
